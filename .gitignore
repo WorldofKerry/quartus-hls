@@ -1,0 +1,5 @@
+# Quartus
+quartus_project/**
+
+# Python
+venv/**
