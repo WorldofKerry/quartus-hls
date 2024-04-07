@@ -56,7 +56,7 @@ module lab3_top(SW,KEY,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,LEDR);
       f0_ready <= 1;
     end else begin
       f0_start <= 0;
-      if (1) begin
+      if (f0_ready && f0_valid) begin
         counter <= f0_output_0;
       end
     end
