@@ -9,16 +9,7 @@ module lab3_top(SW,KEY,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,LEDR);
   wire rst = ~KEY[0];
   wire clk = ~KEY[3];
 
-  // 7-segment display
-  wire [6:0] sseg0_output_0;
-  seven_seg sseg0(
-    .n(counter[3:0]), 
-    .__output_0(sseg0_output_0), 
-    .__ready(1'b1), 
-    .__clock(clk), 
-    .__reset(rst), 
-    .__start(1'b1)
-  );
+  reg [6:0] HEX0_reg;
   
   // Fib
   wire [31:0] f0_output_0;
@@ -40,7 +31,9 @@ module lab3_top(SW,KEY,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,LEDR);
     .__reset(rst),
   );
 
-  assign HEX0 = sseg0_output_0; // Workaround as python2verilog does not support bitwise not  
+  assign HEX0 = HEX0_reg;
+
+  // Debug LEDs
   assign LEDR[0] = f0_valid;
   assign LEDR[1] = f0_done;
   assign LEDR[2] = f0_start;
@@ -49,6 +42,7 @@ module lab3_top(SW,KEY,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,LEDR);
   assign LEDR[8] = clk;
   assign LEDR[9] = rst;
 
+  // Wrapper FSM
   always @(posedge clk) begin
     // Fib
     if (rst) begin // Remember to hold clk and rst to reset
@@ -57,7 +51,7 @@ module lab3_top(SW,KEY,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,LEDR);
     end else begin
       f0_start <= 0;
       if (f0_ready && f0_valid) begin
-        counter <= f0_output_0;
+        HEX0_reg <= f0_output_0[6:0];
       end
     end
 

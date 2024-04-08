@@ -1,18 +1,6 @@
 from python2verilog import verilogify
 
 @verilogify
-def fib(n):
-    a = 0
-    b = 1
-    count = 0
-    while count < n:
-        yield a
-        a, b = b, a + b
-        count += 1
-
-fib(10)
-
-@verilogify
 def seven_seg(n):
     """
     Decimal digit to 7 segment display
@@ -42,3 +30,16 @@ def seven_seg(n):
         return 0
 
 seven_seg(9)
+
+@verilogify
+def fib(n):
+    a = 0
+    b = 1
+    count = 0
+    while count < n:
+        temp = seven_seg(a)
+        yield temp
+        a, b = b, a + b
+        count += 1
+
+fib(10)
