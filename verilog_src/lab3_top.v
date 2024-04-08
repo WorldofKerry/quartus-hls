@@ -40,7 +40,7 @@ module lab3_top(SW,KEY,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,LEDR);
     .__reset(rst),
   );
 
-  assign HEX0 = ~sseg0_output_0; // Workaround as python2verilog does not support bitwise not  
+  assign HEX0 = sseg0_output_0; // Workaround as python2verilog does not support bitwise not  
   assign LEDR[0] = f0_valid;
   assign LEDR[1] = f0_done;
   assign LEDR[2] = f0_start;

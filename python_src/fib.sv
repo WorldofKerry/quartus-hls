@@ -147,62 +147,63 @@ module seven_seg (
         if (__start) begin
             _n <= n;
             _state <= _state;
+            _state <= _state;
             if ((n === $signed(0))) begin
-                __output_0 <= $signed(63);
+                __output_0 <= $signed(192);
                 __done <= 1;
                 __valid <= 1;
                 _state <= _state_idle;
             end else begin
                 if ((n === $signed(1))) begin
-                    __output_0 <= $signed(6);
+                    __output_0 <= $signed(249);
                     __done <= 1;
                     __valid <= 1;
                     _state <= _state_idle;
                 end else begin
                     if ((n === $signed(2))) begin
-                        __output_0 <= $signed(91);
+                        __output_0 <= $signed(164);
                         __done <= 1;
                         __valid <= 1;
                         _state <= _state_idle;
                     end else begin
                         if ((n === $signed(3))) begin
-                            __output_0 <= $signed(79);
+                            __output_0 <= $signed(176);
                             __done <= 1;
                             __valid <= 1;
                             _state <= _state_idle;
                         end else begin
                             if ((n === $signed(4))) begin
-                                __output_0 <= $signed(102);
+                                __output_0 <= $signed(153);
                                 __done <= 1;
                                 __valid <= 1;
                                 _state <= _state_idle;
                             end else begin
                                 if ((n === $signed(5))) begin
-                                    __output_0 <= $signed(109);
+                                    __output_0 <= $signed(146);
                                     __done <= 1;
                                     __valid <= 1;
                                     _state <= _state_idle;
                                 end else begin
                                     if ((n === $signed(6))) begin
-                                        __output_0 <= $signed(125);
+                                        __output_0 <= $signed(130);
                                         __done <= 1;
                                         __valid <= 1;
                                         _state <= _state_idle;
                                     end else begin
                                         if ((n === $signed(7))) begin
-                                            __output_0 <= $signed(7);
+                                            __output_0 <= $signed(248);
                                             __done <= 1;
                                             __valid <= 1;
                                             _state <= _state_idle;
                                         end else begin
                                             if ((n === $signed(8))) begin
-                                                __output_0 <= $signed(127);
+                                                __output_0 <= $signed(128);
                                                 __done <= 1;
                                                 __valid <= 1;
                                                 _state <= _state_idle;
                                             end else begin
                                                 if ((n === $signed(9))) begin
-                                                    __output_0 <= $signed(111);
+                                                    __output_0 <= $signed(144);
                                                     __done <= 1;
                                                     __valid <= 1;
                                                     _state <= _state_idle;
