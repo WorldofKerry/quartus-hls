@@ -3,8 +3,8 @@
 ## Environment
 - Windows 10
 - Quartus Prime 19.1 (Lite Edition) 
-- WSL 2 on Ubuntu 22.04
-- Folder in Windows partition with WSL 2 running Python 3.10 commands
+- WSL 1 on Ubuntu 22.04
+- Folder in Windows partition with WSL 1 running Python 3.10
 - DE1-SoC Board
 
 ## Steps
@@ -21,3 +21,6 @@
 1. Compile and upload to DE1-SoC board
 1. Hold both KEY0 and KEY3 at the same time, let both go to reset
 1. Tap KEY3 multiple times to see Fib sequence
+
+## Update
+- After updating `python/fib.py`, re-run `python3 python_src/fib.py` to update `python_src/fib.sv`
